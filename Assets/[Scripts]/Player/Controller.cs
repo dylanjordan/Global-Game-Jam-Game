@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Rendering.LookDev;
 using UnityEditor.Tilemaps;
 using UnityEditor.U2D;
 using UnityEngine;
@@ -36,6 +37,10 @@ public class Controller : MonoBehaviour
 
     private bool facingRight = true;
 
+    private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+
+
     private void Awake()
     {
         playerControl = new PlayerControl();        
@@ -46,7 +51,18 @@ public class Controller : MonoBehaviour
         moveDir = move.ReadValue<Vector2>() ;
 
         Turn();
-       
+
+        if (IsGrounded())
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        
+
     }
     private void FixedUpdate()
     {
@@ -70,12 +86,20 @@ public class Controller : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.started && IsGrounded())
-        {
+      
 
+        if(coyoteTimeCounter > 0f && context.started)
+        {
             StartCoroutine(HoldJump());
+        }
+
+        if (context.started && rb.velocity.y > 0.0f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            coyoteTimeCounter = 0f;
 
         }
+
 
 
 
@@ -110,7 +134,7 @@ public class Controller : MonoBehaviour
         move = playerControl.Player.Move;
         move.Enable();
 
-        Debug.Log(move.)
+            
 
         jump = playerControl.Player.Jump;
         jump.Enable();
