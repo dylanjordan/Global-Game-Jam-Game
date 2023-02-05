@@ -515,6 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPos: {x: -10, y: -1, z: 0}
   unselectedPos: {x: -12, y: -1, z: 0}
+  hoverPos: {x: -11, y: -1, z: 0}
 --- !u!1 &384289336
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,6 +2203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPos: {x: -10, y: 1, z: 0}
   unselectedPos: {x: -12, y: 1, z: 0}
+  hoverPos: {x: -11, y: 1, z: 0}
 --- !u!61 &2076361047
 BoxCollider2D:
   m_ObjectHideFlags: 0
