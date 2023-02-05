@@ -9,7 +9,7 @@ public class Fixable : MonoBehaviour
 
     bool canFix = false;
 
-    public Color m_Color = Color.white;
+    public AudioClip fixSound;
 
     // Update is called once per frame
     void Update()
@@ -31,7 +31,11 @@ public class Fixable : MonoBehaviour
             if (!body)
                 return;
 
-            body.GetComponent<SpriteRenderer>().color = m_Color;
+            body.GetComponent<SpriteRenderer>().sprite = body.GetComponent<Teeth>().GetFixedTooth();
+            AudioSource.PlayClipAtPoint(fixSound, body.transform.position);
+            body.layer = LayerMask.NameToLayer("FixedTeeth");
+            body.GetComponent<Rigidbody2D>().Sleep();
+            body.GetComponent<Teeth>().IsSaved();
         }
     }
 

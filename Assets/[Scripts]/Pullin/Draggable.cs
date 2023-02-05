@@ -20,6 +20,8 @@ public class Draggable : MonoBehaviour
 
     bool canPull = false;
 
+    public AudioClip pullSound;
+
     void Update()
     {
         //Debug.Log(canPull);
@@ -47,6 +49,10 @@ public class Draggable : MonoBehaviour
 
             // Attach the anchor to the local-point where we clicked.
             m_TargetJoint.anchor = m_TargetJoint.transform.InverseTransformPoint(worldPos);
+            AudioSource.PlayClipAtPoint(pullSound, body.transform.position);
+            body.GetComponent<SpriteRenderer>().sortingOrder = 3;
+            body.GetComponent<Teeth>().IsPulled();
+            body.gameObject.layer = LayerMask.NameToLayer("FixedTeeth");
         }
         else if (Input.GetMouseButtonUp(0))
         {

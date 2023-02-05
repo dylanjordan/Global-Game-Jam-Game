@@ -21,7 +21,7 @@ public class FixerTool : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("fixer " + selected);
+        //Debug.Log("fixer " + selected);
         if (selected)
         {
             transform.position = selectedPos;

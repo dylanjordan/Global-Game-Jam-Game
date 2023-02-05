@@ -21,7 +21,7 @@ public class Tool : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Puller " + selected);
+        //Debug.Log("Puller " + selected);
         if (selected)
         {
             transform.position = selectedPos;
