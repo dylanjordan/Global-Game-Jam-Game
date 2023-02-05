@@ -40,10 +40,11 @@ public class Controller : MonoBehaviour
     private float coyoteTime = 0.2f;
     private float coyoteTimeCounter;
 
+    public Animator animator;
 
     private void Awake()
     {
-        playerControl = new PlayerControl();        
+        playerControl = new PlayerControl();     
     }
 
     private void Update()
@@ -70,18 +71,26 @@ public class Controller : MonoBehaviour
         {
             return;
         }
-  
+
+
         rb.velocity = new Vector2(moveDir.x * speed, rb.velocity.y);
 
-        
+    
 
         if(moveDir == Vector2.zero)
         {
             rb.velocity = Vector2.Lerp(rb.velocity, (new Vector2(moveDir.x* speed, rb.velocity.y)), acceleration * Time.deltaTime);
+            animator.SetBool("Idle", true);
+            animator.SetBool("Walking", false);
         }
-      
 
-        
+        if (moveDir != Vector2.zero)
+        {
+            animator.SetBool("Walking", true);
+            animator.SetBool("Idle", false);
+        }
+
+
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -91,6 +100,7 @@ public class Controller : MonoBehaviour
         if(coyoteTimeCounter > 0f && context.started)
         {
             StartCoroutine(HoldJump());
+            animator.SetTrigger("Jump");
         }
 
         if (context.started && rb.velocity.y > 0.0f)
