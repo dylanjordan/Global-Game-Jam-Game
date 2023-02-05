@@ -110,6 +110,8 @@ public class Controller : MonoBehaviour
         move = playerControl.Player.Move;
         move.Enable();
 
+        Debug.Log(move.)
+
         jump = playerControl.Player.Jump;
         jump.Enable();
         jump.performed += Jump;
