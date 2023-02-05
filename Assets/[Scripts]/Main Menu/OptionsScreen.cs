@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Audio;
 
 public class OptionsScreen : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class OptionsScreen : MonoBehaviour
     private int selectedResolution;
 
     public TMP_Text resolutionLabel;
+
+    public AudioMixer theMixer;
+
+    public TMP_Text mastLabel, musicLabel, sfxLabel;
+    public Slider mastSlider, musicSlider, sfxSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +58,18 @@ public class OptionsScreen : MonoBehaviour
 
             UpdateResLabel();
         }
+
+        float vol = 0f;
+        theMixer.GetFloat("Master Vol", out vol);
+        mastSlider.value = vol;
+        theMixer.GetFloat("Music Vol", out vol);
+        musicSlider.value = vol;
+        theMixer.GetFloat("SFX Vol", out vol);
+        sfxSlider.value = vol;
+
+        mastLabel.text = Mathf.RoundToInt(mastSlider.value + 80).ToString();
+        musicLabel.text = Mathf.RoundToInt(musicSlider.value + 80).ToString();
+        sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 80).ToString();
     }
 
     // Update is called once per frame
@@ -102,6 +120,33 @@ public class OptionsScreen : MonoBehaviour
         }
 
         Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, fullscreenTog.isOn);
+    }
+
+    public void SetMasterVol()
+    {
+        mastLabel.text = Mathf.RoundToInt(mastSlider.value + 80).ToString();
+
+        theMixer.SetFloat("Master Vol", mastSlider.value);
+
+        PlayerPrefs.SetFloat("Master Vol", mastSlider.value);
+    }
+
+    public void SetMusicVol()
+    {
+        musicLabel.text = Mathf.RoundToInt(musicSlider.value + 80).ToString();
+
+        theMixer.SetFloat("Music Vol", mastSlider.value);
+
+        PlayerPrefs.SetFloat("Music Vol", musicSlider.value);
+    }
+
+    public void SetSFXVol()
+    {
+        sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 80).ToString();
+
+        theMixer.SetFloat("SFX Vol", mastSlider.value);
+
+        PlayerPrefs.SetFloat("SFX Vol", sfxSlider.value);
     }
 }
 
