@@ -5,19 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
+    public Animator transition;
+    
+    
+   
     public void LoadScene1()
     {
-        SceneManager.LoadScene("Level1");
+        StartCoroutine(LoadLevel("Level1"));
+
     }
 
     public void LoadScene2()
     {
-        SceneManager.LoadScene("Level2");
+        StartCoroutine(LoadLevel("Level2"));
+
+
     }
 
     public void LoadScene3()
     {
-        SceneManager.LoadScene("Level3");
+       StartCoroutine(LoadLevel("Level3"));
+       
+
     }
 
     public void Return()
@@ -25,4 +34,12 @@ public class LoadScene : MonoBehaviour
         //SceneManager.LoadScene("");
     }
 
+    IEnumerator LoadLevel(string name)
+    {
+        
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene(name);
+    }
+
+    
 }
