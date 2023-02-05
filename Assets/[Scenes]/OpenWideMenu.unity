@@ -3042,7 +3042,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1273838711}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: CloseOptions
         m_Mode: 1
@@ -4269,7 +4269,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1273838706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43b0ec8749f18b24a9bb29833022a901, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b1e7d2576992fd47b11dc4afac8340c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firstLevel: 
