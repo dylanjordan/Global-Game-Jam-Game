@@ -303,17 +303,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7760408061744490144, guid: 08122613ae2ce6645b4ccb8cb974778a, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: cc74e24a559ea6c408285d3e2a3ad57b, type: 2}
     - target: {fileID: 7760408061744490146, guid: 08122613ae2ce6645b4ccb8cb974778a, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760408061744490174, guid: 08122613ae2ce6645b4ccb8cb974778a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7760408061744490175, guid: 08122613ae2ce6645b4ccb8cb974778a, type: 3}
       propertyPath: m_RootOrder
@@ -870,15 +862,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8702145450767462545, guid: eb863772080a58c4ab3fc103aeab7788, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.00026041668
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8702145450767462545, guid: eb863772080a58c4ab3fc103aeab7788, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.38125002
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8702145450767462545, guid: eb863772080a58c4ab3fc103aeab7788, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.17037037
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb863772080a58c4ab3fc103aeab7788, type: 3}

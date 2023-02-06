@@ -7,31 +7,29 @@ public class LoadScene : MonoBehaviour
 {
     public Animator transition;
     
-    
-   
     public void LoadScene1()
     {
-        StartCoroutine(LoadLevel("Level1"));
+        StartCoroutine(LoadLevel("Level 1"));
 
     }
 
     public void LoadScene2()
     {
-        StartCoroutine(LoadLevel("Level2"));
+        StartCoroutine(LoadLevel("Level 2"));
 
 
     }
 
     public void LoadScene3()
     {
-       StartCoroutine(LoadLevel("Level3"));
+       StartCoroutine(LoadLevel("Level 3"));
        
 
     }
 
     public void Return()
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("OpenWideMenu");
     }
 
     IEnumerator LoadLevel(string name)

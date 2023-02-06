@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(firstLevel);
+        SceneManager.LoadScene("ChooseLevel");
     }
 
     public void OpenOptions()

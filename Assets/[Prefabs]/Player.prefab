@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7760408061744490174}
   - component: {fileID: 7760408061744490145}
   - component: {fileID: 7760408061744490144}
-  - component: {fileID: 7760408061744490172}
   - component: {fileID: 7760408062478103266}
   - component: {fileID: 1049009491}
+  - component: {fileID: 365904910}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -107,10 +107,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  speed: 15
-  acceleration: 1
+  speed: 10
+  acceleration: 2
   jumpPower: 20
-  canDash: 1
+  dashingPower: 5
   animator: {fileID: 7760408062478103266}
 --- !u!50 &7760408061744490144
 Rigidbody2D:
@@ -133,32 +133,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &7760408061744490172
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7760408061744490146}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.026228257, y: -0.0013719238}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.21, y: 0.23}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.16113539, y: 0.22600114}
-  m_EdgeRadius: 0
 --- !u!95 &7760408062478103266
 Animator:
   serializedVersion: 5
@@ -297,6 +271,22 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!70 &365904910
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760408061744490146}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.030056609, y: 0.0046203374}
+  m_Size: {x: 0.14988677, y: 0.22075932}
+  m_Direction: 0
 --- !u!1 &7760408062569757102
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7760408062569757102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.021, y: -0.115, z: 0}
+  m_LocalPosition: {x: 0.0305, y: -0.1081, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

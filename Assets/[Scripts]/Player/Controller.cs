@@ -23,15 +23,16 @@ public class Controller : MonoBehaviour
     [Header ("Movement")]
     private Vector2 moveDir;
     public float speed = 10f;
-    public float acceleration = 1.0f;
-    public float jumpPower = 5f;
+    public float acceleration = 2.0f;
+    public float jumpPower = 20f;
 
 
     [Header("Dashing")]
     [SerializeField]
+    public float dashingPower = 10.0f;
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 24.0f;
+    
     private float dashingTime = 0.2f;
     private float dashingCoolDown = 1.0f;
 
@@ -119,6 +120,7 @@ public class Controller : MonoBehaviour
         if (context.started && canDash)
         {
             StartCoroutine(Dashing());
+            animator.SetTrigger("Jump");
         }
     }
 
