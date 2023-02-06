@@ -10,7 +10,7 @@ public class LoadScene : MonoBehaviour
     public void LoadScene1()
     {
         StartCoroutine(LoadLevel("Level 1"));
-
+        
     }
 
     public void LoadScene2()
