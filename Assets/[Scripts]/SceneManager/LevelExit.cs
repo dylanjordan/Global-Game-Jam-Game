@@ -9,7 +9,7 @@ public class LevelExit : MonoBehaviour
 
     private void Start()
     {
-        levelsCompleted = 0;
+        //levelsCompleted = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,10 +18,12 @@ public class LevelExit : MonoBehaviour
         {
             levelsCompleted++;
 
+            Debug.Log(levelsCompleted);
+
             if (levelsCompleted < 3)
                 SceneManager.LoadScene("ChooseLevel");
             else
-                SceneManager.LoadScene("");
+                SceneManager.LoadScene("TeethPulling");
         }
     }
 }
