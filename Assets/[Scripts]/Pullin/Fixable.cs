@@ -36,6 +36,8 @@ public class Fixable : MonoBehaviour
             body.layer = LayerMask.NameToLayer("FixedTeeth");
             body.GetComponent<Rigidbody2D>().Sleep();
             body.GetComponent<Teeth>().IsSaved();
+
+            Debug.Log("CLEANED TOOTH");
         }
     }
 

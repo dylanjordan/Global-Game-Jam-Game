@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedSprite: {fileID: 1483635162, guid: 37586aa0bf2ea7b4c89f9870c4e88dc9, type: 3}
-  type: 0
+  type: 1
 --- !u!1 &408267143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,9 +1607,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e9acca61eaaa34ab1b204cd15f540c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goodScene: 0
-  midScene: 0
-  badScene: 0
+  goodTeeth: 0
+  badTeeth: 0
+  goodScene: 8
+  midScene: 7
+  badScene: 7
 --- !u!1 &666619512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3019,7 +3021,7 @@ MonoBehaviour:
   m_Frequency: 5
   m_DrawDragLine: 1
   m_Color: {r: 0, g: 1, b: 1, a: 1}
-  pullSound: {fileID: 8300000, guid: 5f1beaf7a0584fd47b02c06f9d6a0c72, type: 3}
+  pullSound: {fileID: 8300000, guid: 34b195b18cc97f14fac0990d643d3729, type: 3}
 --- !u!114 &1774307577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3068,7 +3070,7 @@ MonoBehaviour:
   m_FixLayers:
     serializedVersion: 2
     m_Bits: 8
-  fixSound: {fileID: 8300000, guid: 190aca270b9641b469b65e1a18f7cd4b, type: 3}
+  fixSound: {fileID: 8300000, guid: 8fcbdb1e038a5c34e920d5e0b0106984, type: 3}
 --- !u!1 &1866402210
 GameObject:
   m_ObjectHideFlags: 0
@@ -3098,7 +3100,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2bdd436a6d006834fbca3c87e4e38f1f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0

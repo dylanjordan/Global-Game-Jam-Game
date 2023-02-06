@@ -53,6 +53,8 @@ public class Draggable : MonoBehaviour
             body.GetComponent<SpriteRenderer>().sortingOrder = 3;
             body.GetComponent<Teeth>().IsPulled();
             body.gameObject.layer = LayerMask.NameToLayer("FixedTeeth");
+
+            Debug.Log("PULLED TOOTH");
         }
         else if (Input.GetMouseButtonUp(0))
         {

@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/[Scenes]/TeethPulling.unity
     guid: e2a00c3fd91ab0641bf077b7d1763c91
+  - enabled: 1
+    path: Assets/[Scenes]/LoseScene.unity
+    guid: 89fa6a75318ec064487412d4db2e6ccb
+  - enabled: 1
+    path: Assets/[Scenes]/WinScene.unity
+    guid: 4b05da5353536f94bb760325bdb5d082
   m_configObjects: {}

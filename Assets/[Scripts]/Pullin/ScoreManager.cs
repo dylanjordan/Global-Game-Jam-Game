@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
-    int goodTeeth = 0;
-    int badTeeth = 0;
+    [SerializeField] int goodTeeth = 0;
+    [SerializeField] int badTeeth = 0;
     public int goodScene;
     public int midScene;
     public int badScene;
@@ -14,9 +14,6 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("good: " + goodTeeth);
-        Debug.Log("bad: " + badTeeth);
-
         if ((goodTeeth + badTeeth) == 3)
         {
             StartCoroutine(ToothDelay());
